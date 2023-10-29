@@ -6,8 +6,12 @@ vue.use(vuex);
 
 const store = new vuex.Store({
     state: {
-        name: null,
-        registerDate: null
+        user: null
+    },
+    mutations: {
+        updateUser(state, user) {
+            state.user = user;
+        }
     },
     modules: {
         task: TaskStore,

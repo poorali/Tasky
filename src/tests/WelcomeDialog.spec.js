@@ -11,7 +11,7 @@ describe('WelcomeDialog.vue ', () => {
         })
         it('has an input for name', () => {
             const {getByRole} = render(WelcomeDialog)
-            expect(getByRole('input')).toBeDefined();
+            expect(getByRole('textbox')).toBeDefined();
         })
         it('has a submit button', () => {
             const {getByRole} = render(WelcomeDialog)
@@ -20,14 +20,14 @@ describe('WelcomeDialog.vue ', () => {
         it('should disable submit button until user enters the name', async() => {
             const {getByRole} = render(WelcomeDialog)
             const button = getByRole('button');
-            const input = getByRole('input');
+            const input = getByRole('textbox');
 
-            expect(button.attributes().disabled).toBeDefined()
+            expect(button.attributes.disabled).toBeDefined()
             await fireEvent.update(input,'Nima Poorali')
-            expect(button.attributes().disabled).toBeUndefined()
+            expect(button.attributes.disabled).toBeUndefined()
 
             await fireEvent.update(input,'')
-            expect(button.attributes().disabled).toBeDefined()
+            expect(button.attributes.disabled).toBeDefined()
         })
     })
     describe('State', () => {
@@ -35,7 +35,7 @@ describe('WelcomeDialog.vue ', () => {
             const {getByRole} = render(WelcomeDialog,{
                 store: store
             })
-            const input = getByRole('input');
+            const input = getByRole('textbox');
             const button = getByRole('button');
             await fireEvent.update(input, 'Nima Poorali')
             await fireEvent.click(button);

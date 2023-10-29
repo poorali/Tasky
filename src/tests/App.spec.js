@@ -6,7 +6,7 @@ import store from "../stores/store";
 describe("App.vue", () => {
     describe('Welcome Dialog', () => {
         it('has  to render a Welcome dialog on load', () => {
-            const {getByTestId} = render(App)
+            const {getByTestId} = renderWithUser({state: {user: null}})
             expect(getByTestId('welcome-dialog')).toBeDefined();
         })
 
