@@ -3,7 +3,7 @@
         <WelcomeDialog v-if="!user"/>
         <template v-else>
             <Nav/>
-            <div class="flex flex-col">
+            <div class="flex flex-col bg-green-400 h-screen w-full lg:w-10/12">
                 <Header/>
                 <Main/>
             </div>

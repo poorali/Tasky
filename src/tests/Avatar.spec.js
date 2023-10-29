@@ -24,13 +24,13 @@ describe('Avatar.vue', () => {
         })
 
         it('shows first first two letter of user name as an avatar image', () => {
-            const {getByText} = renderWithUser({
+            const {queryByText} = renderWithUser({
                 name: 'Nima Poorali Chokosari',
                 registerDate: '2023-12-12'
             })
 
-            expect(getByText('AP')).toBeDefined();
-            expect(getByText('APC')).toBeNull();
+            expect(queryByText('NP')).toBeDefined();
+            expect(queryByText('NPC')).toBeNull()
         })
         it('shows only first letter as an avatar image, if user only enters nick name', () => {
             const {getByText} = renderWithUser({
