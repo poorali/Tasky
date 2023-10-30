@@ -30,7 +30,6 @@
                            class="border-b-2 py-2 pl-2 focus:outline-none"
                            @blur="validate()"
                            autofocus
-                           tabindex="1"
                            v-bind:class="{'border-red-500 focus:border-red-500':errors.title,'focus:border-green-300':!errors.title}"
                     />
                     <span v-if="errors.title" class="text-red-500 text-sm">{{ errors.title }}</span>
@@ -43,7 +42,7 @@
                 </div>
                 <div class="mt-4 flex justify-end">
                     <button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-                            data-testId="add-task-button" @click="updateTask()" tabindex="2">
+                            data-testId="add-task-button" @click="updateTask()">
                         Save
                     </button>
                     <button class="px-4 py-2 bg-gray-300 rounded ml-2 hover:bg-gray-400" @click="toggleModal('hide')">
