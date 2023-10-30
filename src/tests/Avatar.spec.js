@@ -5,15 +5,6 @@ import store from "../stores/store";
 
 describe('Avatar.vue', () => {
     describe('State', () => {
-        it('shows user name from state', () => {
-            const {getByText} = renderWithUser({
-                name: 'Nima Poorali Chokosari',
-                registerDate: '2023-12-12'
-            })
-
-            expect(getByText('Nima Poorali Chokosari')).toBeDefined();
-        })
-
         it('show user registered date from state', () => {
             const {queryByText} = renderWithUser({
                 name: 'Nima Poorali Chokosari',

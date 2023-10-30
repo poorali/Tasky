@@ -1,7 +1,9 @@
 <template>
-    <div data-testid="main" class="px-5 h-full flex flex-col">
-        <Actions/>
-        <List/>
+    <div data-testid="main" class="px-5 flex flex-col h-screen">
+        <div>
+            <Actions/>
+            <List/>
+        </div>
         <Add/>
     </div>
 </template>

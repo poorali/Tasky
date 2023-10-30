@@ -15,6 +15,11 @@ export default {
     methods: {
         toggleModal(mode = 'show') {
             this.showModal = !this.showModal;
+            if(mode === 'show'){
+                this.$nextTick(() => {
+                    this.$refs.taskTitleInput.focus();
+                })
+            }
             if(mode === 'hide'){
                 this.resetFields();
             }

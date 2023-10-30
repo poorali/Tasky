@@ -12,7 +12,7 @@
         </button>
         <!-- Modal Code -->
         <div data-testid="add-task-modal" v-bind:class="{'hidden':!showModal}"
-             class="fixed inset-0 flex items-center justify-center z-50">
+             class="fixed inset-0 flex items-center justify-center z-50 p-5">
             <div class="fixed inset-0 bg-black opacity-50"></div>
             <div class="z-10 w-96 bg-white rounded-lg shadow-lg p-4">
                 <div class="text-lg font-semibold mb-4 flex justify-between items-center">
@@ -26,8 +26,11 @@
                 <div class="flex flex-col">
                     <input type="text" id="TaskTitle" v-model="title"
                            data-testid="input-task-title" placeholder="Title"
+                           ref="taskTitleInput"
                            class="border-b-2 py-2 pl-2 focus:outline-none"
                            @blur="validate()"
+                           autofocus
+                           tabindex="1"
                            v-bind:class="{'border-red-500 focus:border-red-500':errors.title,'focus:border-green-300':!errors.title}"
                     />
                     <span v-if="errors.title" class="text-red-500 text-sm">{{ errors.title }}</span>
@@ -40,7 +43,7 @@
                 </div>
                 <div class="mt-4 flex justify-end">
                     <button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-                            data-testId="add-task-button" @click="updateTask()">
+                            data-testId="add-task-button" @click="updateTask()" tabindex="2">
                         Save
                     </button>
                     <button class="px-4 py-2 bg-gray-300 rounded ml-2 hover:bg-gray-400" @click="toggleModal('hide')">
