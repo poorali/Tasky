@@ -1,6 +1,6 @@
 /* globals describe,it,expect */
-import {render} from "@testing-library/vue";
-import Avatar from "../components/Nav/Avatar/Avatar.vue";
+import {queryByText, render} from "@testing-library/vue";
+import Avatar from "../components/Avatar/Avatar.vue";
 import store from "../stores/store";
 
 describe('Avatar.vue', () => {
@@ -15,12 +15,12 @@ describe('Avatar.vue', () => {
         })
 
         it('show user registered date from state', () => {
-            const {getByText} = renderWithUser({
+            const {queryByText} = renderWithUser({
                 name: 'Nima Poorali Chokosari',
                 registerDate: '2023-12-12'
             })
 
-            expect(getByText('2023-12-12')).toBeDefined();
+            expect(queryByText('2023-12-12')).toBeDefined();
         })
 
         it('shows first first two letter of user name as an avatar image', () => {

@@ -7,7 +7,7 @@
   </div>
 </template>
 <script>
-import Avatar from "./Avatar/Avatar.vue";
+import Avatar from "../Avatar/Avatar.vue";
 import FilterOption from "../FilterOption/FilterOption.vue";
 
 export default {

@@ -11,7 +11,7 @@
 </template>
 <script>
 import Search from "./Search/Search.vue";
-import Avatar from "../../components/Nav/Avatar/Avatar.vue";
+import Avatar from "../../components/Avatar/Avatar.vue";
 import {mapState} from "vuex";
 export default {
     name: 'Header',
