@@ -3,3 +3,7 @@
 @tailwind components;
 
 @tailwind utilities;
+
+.mx-input{
+    @apply border-0 border-b-2 rounded-none shadow-none border-gray-200 hover:border-green-300 focus:border-green-300 pb-3 text-black
+}

@@ -1,5 +1,5 @@
 <template>
-    <div data-testid="main">
+    <div data-testid="main" class="px-5 h-full flex flex-col">
         <Actions/>
         <List/>
         <Add/>
