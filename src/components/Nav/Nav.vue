@@ -1,5 +1,5 @@
 <template>
-  <div data-testid="nav" class="p-2 bg-gray-200 h-screen hidden lg:flex flex-col w-1/6">
+  <div data-testid="nav" class="p-2 py-5 bg-gray-200 h-screen hidden lg:flex flex-col w-1/6">
       <div data-testid="avatar" class="hidden lg:block">
           <Avatar/>
       </div>
