@@ -1,5 +1,7 @@
 <template>
-    <div data-testid="actions">This is actions component</div>
+    <div data-testid="actions">
+<!--        This is actions component-->
+    </div>
 </template>
 <script>
 export default {

@@ -1,5 +1,6 @@
 import {task} from "../../../../lang/validations";
 import DatePicker from 'vue2-datepicker';
+import {mapState} from "vuex";
 
 export default {
     name: 'TasksAdd',
@@ -15,12 +16,12 @@ export default {
     methods: {
         toggleModal(mode = 'show') {
             this.showModal = !this.showModal;
-            if(mode === 'show'){
+            if (mode === 'show') {
                 this.$nextTick(() => {
                     this.$refs.taskTitleInput.focus();
                 })
             }
-            if(mode === 'hide'){
+            if (mode === 'hide') {
                 this.resetFields();
             }
         },
@@ -28,6 +29,7 @@ export default {
             this.date = '';
             this.title = '';
             this.errors = {};
+            this.$store.state.updatingItem = null;
         },
         updateTask() {
             if (this.validate()) {
@@ -46,4 +48,16 @@ export default {
             return true
         }
     },
+    computed: {
+        ...mapState({updatingItem: state => state.updatingItem})
+    },
+    watch: {
+        updatingItem(value) {
+            if (value) {
+                this.date = value.date;
+                this.title = value.title;
+                this.toggleModal('show')
+            }
+        }
+    }
 }

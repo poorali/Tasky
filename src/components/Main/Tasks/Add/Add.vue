@@ -34,7 +34,7 @@
                     />
                     <span v-if="errors.title" class="text-red-500 text-sm">{{ errors.title }}</span>
 
-                    <date-picker data-testid="input-task-date" v-model="date" class="w-full mt-4 py-2"
+                    <date-picker data-testid="input-task-date"  v-model="date" class="w-full mt-4 py-2"
                                  :disabled-date="(date) => date < new Date().setHours(0,0,0,0)" placeholder="Due date"
                                  valueType="format">
                     </date-picker>

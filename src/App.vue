@@ -27,6 +27,11 @@ export default {
         if (user) {
             this.$store.commit('updateUser', JSON.parse(user))
         }
+        //Get Tasks from local storage
+        const tasks = localStorage.getItem('tasks');
+        if (tasks) {
+            this.$store.commit('updateTasks', JSON.parse(tasks))
+        }
     }
 }
 </script>

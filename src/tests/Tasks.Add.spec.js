@@ -85,10 +85,10 @@ describe('Add.vue', () => {
             })
             const button = getByTestId('add-task-button')
             await fireEvent.click(button)
-            expect(store.state.task.tasks[0].id).toEqual(1);
-            expect(store.state.task.tasks[0].title).toEqual('Task 1');
-            expect(store.state.task.tasks[0].date).toEqual(date);
-            expect(store.state.task.tasks[0].status).toEqual('pending');
+            expect(store.state.tasks[0].id).toEqual(1);
+            expect(store.state.tasks[0].title).toEqual('Task 1');
+            expect(store.state.tasks[0].date).toEqual(date);
+            expect(store.state.tasks[0].status).toEqual('pending');
         })
     })
 })
