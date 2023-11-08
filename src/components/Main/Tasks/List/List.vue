@@ -5,7 +5,7 @@
             <span class="text-white font-medium  mt-3">There is no task</span>
         </div>
         <transition-group v-else name="task-list" tag="div">
-            <div v-for="(value,index) in getList" :data-testid="'task-item-' + index" :key="index">
+            <div v-for="(value,index) in getList" :data-testid="'task-item-' + index" :key="'task-' + index + value.id">
                 <TaskItem :task="value"/>
             </div>
         </transition-group>
@@ -16,7 +16,7 @@ export {default} from './Hooks.js'
 </script>
 <style>
 .task-list-enter-active, .task-list-leave-active {
-    transition: all 1s;
+    transition: all 0.7s;
 }
 
 .task-list-enter, .task-list-leave-to {

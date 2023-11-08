@@ -8,7 +8,7 @@ export default {
     computed: {
         getList() {
             //Filter tasks
-            const state = this.$store.state;
+            const state = new Object(this.$store.state);
             let tasks = state.tasks.filter((item) => item.status !== 'deleted');
             tasks = tasks.filter((item) => {
                 if (state.searchQuery === '') {
