@@ -6,6 +6,9 @@
             <div class="flex flex-col bg-green-400 h-screen w-full lg:w-10/12">
                 <Header/>
                 <Main/>
+                <footer class="text-center text-sm pb-3">
+                    Made with <span class="text-red-600">♥</span> by <a class="font-medium" href="https://github.com/poorali">@poorali</a>
+                </footer>
             </div>
         </template>
     </div>
