@@ -1,24 +1,33 @@
-# todo-task
 
-## Project setup
-```
-npm install
-```
+# Tasky - your simple task tracker
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+This is a simple task tracker application which you can manage your own daily todos in it.
 
-### Compiles and minifies for production
-```
-npm run build
-```
 
-### Lints and fixes files
-```
-npm run lint
-```
+## Demo
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+https://tasky.illuteam.com
+
+
+**Download android APK:**
+https://tasky.illuteam.com/Tasky.apk
+## Features
+
+- Add and manage tasks
+- Set due date for a task
+- Delete a task
+- Search
+- Filter tasks by all, daily or completed
+
+
+## How to use
+Using the application is pretty simple. Just open demo link or download and install apk file. Then, for the first lunch enter your name and you're good to go. Now you can start adding your tasks.
+
+
+## Tech Stack
+This application as been developed with TDD approach using below technologies:
+
+**Client:** Vue 2, Vuex 3, TailwindCSS
+
+**Testing:** Jest, Vue Testing Library
+
