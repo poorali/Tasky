@@ -6,30 +6,24 @@ import store from "../stores/store";
 describe("App.vue", () => {
     describe('Welcome Dialog', () => {
         it('has  to render a Welcome dialog on load', () => {
-            const {getByTestId} = renderWithUser({state: {user: null}})
+            const {getByTestId} = renderWithUser(null)
             expect(getByTestId('welcome-dialog')).toBeDefined();
         })
 
         it('has to render welcome dialog if user state does not exists', () => {
-            const {queryByTestId} = renderWithUser({
-                state: {user: {name: 'Nima', registerDate: '2023-12-12'}}
-            })
+            const {queryByTestId} = renderWithUser({name: 'Nima', registerDate: '2023-12-12'})
             expect(queryByTestId('welcome-dialog')).toBeNull();
         })
     })
 
     describe('Nav' , () => {
         it('has to render nav component only if user state exists', () => {
-            const {getByTestId} = renderWithUser({
-                state: {user: {name: 'Nima', registerDate: '2023-12-12'}}
-            })
+            const {getByTestId} = renderWithUser({name: 'Nima', registerDate: '2023-12-12'})
             expect(getByTestId('nav')).toBeDefined();
 
         })
         it('has not to render nav component only if user state does not exists', () => {
-            const {queryByTestId} = renderWithUser({
-                state: {user: null}
-            })
+            const {queryByTestId} = renderWithUser(null)
             expect(queryByTestId('nav')).toBeNull();
 
         })
@@ -39,16 +33,12 @@ describe("App.vue", () => {
     // Header
     describe('Header' , () => {
         it('has to render header component only if user state exists', () => {
-            const {getByTestId} = renderWithUser({
-                state: {user: {name: 'Nima', registerDate: '2023-12-12'}}
-            })
+            const {getByTestId} = renderWithUser({name: 'Nima', registerDate: '2023-12-12'})
             expect(getByTestId('header')).toBeDefined();
 
         })
         it('has not to render header component only if user state does not exists', () => {
-            const {queryByTestId} = renderWithUser({
-                state: {user: null}
-            })
+            const {queryByTestId} = renderWithUser(null)
             expect(queryByTestId('header')).toBeNull();
 
         })
@@ -57,16 +47,12 @@ describe("App.vue", () => {
     // Main
     describe('Main' , () => {
         it('has to render main component only if user state exists', () => {
-            const {getByTestId} = renderWithUser({
-                state: {user: {name: 'Nima', registerDate: '2023-12-12'}}
-            })
+            const {getByTestId} = renderWithUser({name: 'Nima', registerDate: '2023-12-12'})
             expect(getByTestId('main')).toBeDefined();
 
         })
         it('has not to render main component only if user state does not exists', () => {
-            const {queryByTestId} = renderWithUser({
-                state: {user: null}
-            })
+            const {queryByTestId} = renderWithUser(null)
             expect(queryByTestId('main')).toBeNull();
 
         })
@@ -76,5 +62,6 @@ describe("App.vue", () => {
 
 /* Utils Function */
 function renderWithUser(user) {
-    return render(App, {store: {...store, ...user}})
+    store.state.user  = user;
+    return render(App, {store})
 }

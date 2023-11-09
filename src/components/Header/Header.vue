@@ -7,15 +7,20 @@
             </div>
         </div>
         <Search/>
+        <div class="flex md:hidden">
+            <FilterOptions/>
+        </div>
+
     </div>
 </template>
 <script>
 import Search from "./Search/Search.vue";
 import Avatar from "../../components/Avatar/Avatar.vue";
 import {mapState} from "vuex";
+import FilterOptions from "@/components/FilterOption/FilterOption.vue";
 export default {
     name: 'Header',
-    components: {Avatar, Search},
+    components: {FilterOptions, Avatar, Search},
     computed: {
         ...mapState(['user'])
     },

@@ -1,5 +1,5 @@
 <template>
-    <div data-testid="tasks-list" class="w-full">
+    <div data-testid="tasks-list" class="w-full max-h-96 overflow-y-auto">
         <div v-if="getList.length === 0" class="flex items-center justify-center flex-col" key="not-found">
             <img src="../../../../assets/404.svg" title="Not Found" alt="Not Found"/>
             <span class="text-white font-medium  mt-3">There is no task</span>
@@ -16,7 +16,7 @@ export {default} from './Hooks.js'
 </script>
 <style>
 .task-list-enter-active, .task-list-leave-active {
-    transition: all 0.7s;
+    transition: all 0s;
 }
 
 .task-list-enter, .task-list-leave-to {
