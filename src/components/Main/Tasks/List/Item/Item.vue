@@ -17,7 +17,7 @@
                         <span v-if="task.date < this.$store.state.today">Overdue -</span> {{ task.date }}
                     </span>
                 </span>
-                <span class="text-green-700" v-if="task.status === 'completed'">Completed</span>
+                <span class="text-green-700" v-if="task.status === 'completed'">Completed - {{ task.date }}</span>
             </div>
         </div>
         <div class="flex ml-auto mr-2">

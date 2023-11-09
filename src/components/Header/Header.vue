@@ -17,7 +17,7 @@
 import Search from "./Search/Search.vue";
 import Avatar from "../../components/Avatar/Avatar.vue";
 import {mapState} from "vuex";
-import FilterOptions from "@/components/FilterOption/FilterOption.vue";
+import FilterOptions from "../FilterOption/FilterOption.vue";
 export default {
     name: 'Header',
     components: {FilterOptions, Avatar, Search},

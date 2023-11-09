@@ -44,7 +44,8 @@ describe('Header.vue', () => {
 
 //Utils
 function renderWithUser(user) {
+    store.state.user = user;
     return render(Header,{
-        store: {...store,...{state:{user: user}}}
+        store
     })
 }

@@ -1,6 +1,6 @@
 <template>
     <div data-testid="tasks-list" class="w-full max-h-96 overflow-y-auto">
-        <div v-if="getList.length === 0" class="flex items-center justify-center flex-col" key="not-found">
+        <div v-if="getList.length === 0" class="flex items-center justify-center flex-col mt-10" key="not-found">
             <img src="../../../../assets/404.svg" title="Not Found" alt="Not Found"/>
             <span class="text-white font-medium  mt-3">There is no task</span>
         </div>

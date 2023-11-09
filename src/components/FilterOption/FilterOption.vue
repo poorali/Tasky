@@ -9,7 +9,7 @@
                 <path d="M384 96V224H256V96H384zm0 192V416H256V288H384zM192 224H64V96H192V224zM64 288H192V416H64V288zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64z"/>
             </svg>
             <span class="pl-3">All</span>
-            <span class="ml-auto pr-3 text-gray-700 font-medium text-sm" v-if="todayCount" data-testid="task-filter-all-count">{{allCount}}</span>
+            <span class="ml-auto pr-3 text-gray-700 font-medium text-sm" v-if="allCount" data-testid="task-filter-all-count">{{allCount}}</span>
         </button>
         <button @click="updateFilter('today')"
                 data-testid="task-filter-today"
@@ -44,7 +44,7 @@ export default {
     },
     computed: {
         todayCount() {
-            return this.$store.state.tasks.filter(item => item.date === this.$store.state.today).length
+            return this.$store.state.tasks.filter(item => item.date === this.$store.state.today && item.status ==='pending').length
         },
         allCount() {
             return this.$store.state.tasks.filter(item => item.status === 'pending').length

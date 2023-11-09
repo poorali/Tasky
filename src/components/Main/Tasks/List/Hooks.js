@@ -12,7 +12,7 @@ export default {
             let tasks = state.tasks.filter((item) => item.status !== 'deleted');
             tasks = tasks.filter((item) => {
                 if (state.searchQuery === '') {
-                    return state.filter === 'today' ? item.date === state.today : item.status === state.filter;
+                    return state.filter === 'today' ? item.date === state.today && item.status == 'pending' : item.status === state.filter;
                 } else {
                     return item.title.toLowerCase().includes(state.searchQuery.toLowerCase())
                 }
